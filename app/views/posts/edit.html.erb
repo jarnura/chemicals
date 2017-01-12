@@ -1,0 +1,18 @@
+<h1>edit post</h1>
+<%= form_for @post do |var| %>
+	<p>
+		<%= var.label :title %><br />
+		<%= var.text_field :title %><br />
+	</p>
+	<p>
+		<%= var.label :body %><br />
+		<%= var.text_field :body %><br />
+	</p>
+	<p>
+		<%= var.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => "select one"} %><br />
+	</p>
+	<p>
+		<%= var.submit "update post" %>
+	</p>
+<% end %>
+<%= link_to "BAck", posts_path %>
