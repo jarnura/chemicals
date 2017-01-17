@@ -1,1 +1,11 @@
-<h1>add new post</h1>
+
+<h1>add new category</h1>
+<%= form_for @category do |var| %>
+	<p>
+		<%= var.label :name %><br />
+		<%= var.text_field :name %><br />
+	</p>
+	<p>
+		<%= var.submit "Add post" %>
+	</p>
+<% end %>

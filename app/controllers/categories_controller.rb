@@ -1,14 +1,19 @@
 class CategoriesController < ApplicationController
 	def index
-		@title = 'title';
+		@category = Category.all
 	end
 	
 	def new
-	
+		@category = Category.new
 	end
 	
 	def create
-		Category.create(category_params)
+		@category = Category.new(post_params)
+		if @category.save
+			redirect_to categories_path, :notice => "category saved"
+		else
+			render "new"
+		end
 	end
 	
 	def edit
