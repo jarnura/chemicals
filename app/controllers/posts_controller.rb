@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
 	def index
-<<<<<<< HEAD
 		@posts = Post.all
 	end
 	
@@ -45,34 +44,4 @@ class PostsController < ApplicationController
 		params.require(:post).permit(:title, :body, :category_id, :author_id)
 	end
 	
-=======
-		@title = 'title';
-	end
-	
-	def new
-	
-	end
-	
-	def create
-	
-	end
-	
-	def edit
-	
-	end
-	
-	def update
-	
-	end
-	
-	def show
-	
-	end
-	
-	def destroy
-	
-	end
-	
-	
->>>>>>> 9b9f316ada41e172021fe2b0da92aba2101b411d
 end

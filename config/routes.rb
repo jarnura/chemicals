@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
-<<<<<<< HEAD
-  get "categories/index"
-  get "categories/edit"
-  get "categories/new"
-  get "categories/show"
   resources :posts
   resources :categories
-=======
-  resources :posts
->>>>>>> 9b9f316ada41e172021fe2b0da92aba2101b411d
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
