@@ -1,0 +1,6 @@
+<h1><%= @manufacture.name %></h1>
+<% @chemicals.each do |post| %>
+	<h3><%= link_to post.name,post %></h3>
+	<p><%=	post.description %></p>
+<% end %>
+<%= link_to "back",manufactures_path %>

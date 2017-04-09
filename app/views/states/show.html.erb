@@ -1,0 +1,6 @@
+<h1><%= @state.name %></h1>
+<% @chemicals.each do |post| %>
+	<h3><%= link_to post.name,post %></h3>
+	<p><%=	post.description %></p>
+<% end %>
+<%= link_to "back",states_path %>

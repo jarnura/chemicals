@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marketing_name: MyString
+  cas: 1
+  chemical_name: MyString
+  other_name: MyString
+  molecular_formula: MyString
+  structural_formula: MyString
+  molecular_weight: 1
+  number_amw: MyString
+  weight_amw: 1
+  percentage_less_full: MyString
+  percentage_less_half: MyString
+  degree_of_purity: MyString
+  hazardous_imp: MyString
+  non_hazardous_imp: MyString
+  year: 1
+  tonne: 1
+  manufacture_id: 1
+  chemical_id: 1
+
+two:
+  marketing_name: MyString
+  cas: 1
+  chemical_name: MyString
+  other_name: MyString
+  molecular_formula: MyString
+  structural_formula: MyString
+  molecular_weight: 1
+  number_amw: MyString
+  weight_amw: 1
+  percentage_less_full: MyString
+  percentage_less_half: MyString
+  degree_of_purity: MyString
+  hazardous_imp: MyString
+  non_hazardous_imp: MyString
+  year: 1
+  tonne: 1
+  manufacture_id: 1
+  chemical_id: 1

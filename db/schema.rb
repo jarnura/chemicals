@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118061452) do
+ActiveRecord::Schema.define(version: 20170402072905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,33 @@ ActiveRecord::Schema.define(version: 20170118061452) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chemicals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "chemical_name"
+    t.integer  "cas"
+    t.string   "description"
+    t.string   "melting_point"
+    t.string   "boiling_point"
+    t.string   "molecular_weight"
+    t.string   "hazardous_level"
+    t.string   "safety_description"
+    t.string   "transport_info"
+    t.integer  "category_id"
+    t.integer  "manufacture_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "place"
+    t.string   "production"
+    t.string   "state_id"
+  end
+
+  create_table "manufactures", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -62,6 +89,48 @@ ActiveRecord::Schema.define(version: 20170118061452) do
     t.integer  "author_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "registerchemicals", force: :cascade do |t|
+    t.string   "marketing_name"
+    t.integer  "cas"
+    t.string   "chemical_name"
+    t.string   "other_name"
+    t.string   "molecular_formula"
+    t.string   "structural_formula"
+    t.integer  "molecular_weight"
+    t.string   "number_amw"
+    t.integer  "weight_amw"
+    t.string   "percentage_less_full"
+    t.string   "percentage_less_half"
+    t.string   "degree_of_purity"
+    t.string   "hazardous_imp"
+    t.string   "non_hazardous_imp"
+    t.integer  "year"
+    t.integer  "tonne"
+    t.integer  "manufacture_id"
+    t.integer  "chemical_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "ibn"
+    t.string   "email"
+    t.string   "company_name"
+    t.integer  "mobile_no"
+    t.string   "job"
+    t.string   "company_pro"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

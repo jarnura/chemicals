@@ -1,0 +1,108 @@
+<div style="margin-top: 10px">
+<div class="container">
+  <div class="jumbotron">
+<h1>New chemical</h1>
+</div>
+</div>
+<%= form_for @chemical, :html => {:class => "form-horizontal center"} do |f| %>
+
+ <div class="form-group">
+	<%= f.label :name, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+		<%= f.text_field :name, class: "form-control"%>
+	</div>
+</div>
+  <div class="form-group">
+	
+	<%= f.label :chemical_name, class: "col-md-2 control-label" %>
+		<div class="col-md-8">
+			<%= f.text_field :chemical_name, class: "form-control" %>
+		</div>
+	</div>
+ <div class="form-group">
+	<%= f.label :cas, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :cas %></div>
+	</div>
+	 <div class="form-group">
+		<%= f.label :description, class: "col-md-2 control-label" %>
+		<div class="col-md-8">
+	<%= f.text_area :description %></div>
+	</div>
+	 <div class="form-group">
+		<%= f.label :melting_point, class: "col-md-2 control-label" %>
+		<div class="col-md-8">
+	<%= f.text_field :melting_point %></div>
+	</div>
+
+	<div class="form-group">
+	<%= f.label :boiling_point, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :boiling_point %></div>
+	</div>
+
+	<div class="form-group">
+	<%= f.label :molecular_weight, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :molecular_weight %></div>
+	</div>
+
+	<div class="form-group">
+	<%= f.label :hazardous_level, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :hazardous_level %></div>
+	</div>
+
+     <div class="form-group">
+	<%= f.label :transport_info, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :transport_info %></div>
+	</div> 
+
+	 <div class="form-group">
+	<%= f.label :place, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :place %></div>
+	</div>
+
+
+	<div class="form-group">
+	<%= f.label :production, class: "col-md-2 control-label" %>
+	<div class="col-md-8">
+	<%= f.text_field :production %></div>
+	</div>
+
+
+
+<div class="form-group ">
+<div class= "col-md-2 control-label">
+	Category
+	</div>
+	<div class="col-md-8">
+<%= f.select :category_id, Category.all.collect {|x| [x.name, x.id]}, {:include_blank => "select One"} %>
+
+</div>
+</div>
+<div class="form-group ">
+<div class= "col-md-2 control-label">
+	Manufacture
+	</div>
+	<div class="col-md-8">
+	 <%= f.select :manufacture_id, Manufacture.all.collect {|x| [x.name, x.id]}, {:include_blank => "select One"} %>
+
+	</div>
+	</div>
+
+	<div class="form-group ">
+<div class= "col-md-2 control-label">
+	PLace
+	</div>
+	<div class="col-md-8">
+	 <%= f.select :state_id, State.all.collect {|x| [x.name, x.id]}, {:include_blank => "select One"} %>
+
+	</div>
+	</div>
+ <div class= "col-md-3 control-label">
+            <%= f.submit :class => "btn btn-primary" %>
+          </div><% end %>
+</div>

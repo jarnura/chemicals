@@ -1,0 +1,80 @@
+<div style="margin-top: 10px">
+<div class="container">
+  <div class="jumbotron">
+<h1>New Manufacturer Registration</h1>
+</div>
+</div>
+<%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
+
+ <div class="form-group">
+  <%= f.label :name, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.text_field :name, class: "form-control"%>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :ibn, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.text_field :ibn, class: "form-control"%>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :email, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.text_field :email, class: "form-control"%>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <%= f.label :company_name, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.text_field :company_name, class: "form-control"%>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :mobile_no, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.text_field :mobile_no, class: "form-control"%>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :job, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.text_field :job, class: "form-control"%>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <%= f.label :company_pro, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.text_field :company_pro, class: "form-control"%>
+  </div>
+</div>
+
+
+
+  <div class="form-group">
+  
+  <%= f.label :password, class: "col-md-2 control-label" %>
+    <div class="col-md-8">
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+  </div>
+
+<!--div class="form-group">
+  <%= f.label :confirm_password, class: "col-md-2 control-label" %>
+  <div class="col-md-8">
+    <%= f.password_field :confirm_password, class: "form-control"%>
+  </div>
+</div-->
+
+ <div class= "col-md-3 control-label">
+            <%= f.submit :class => "btn btn-primary" %>
+          </div><% end %>
+</div>
