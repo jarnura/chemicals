@@ -1,14 +1,32 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  
+
+  get 'states/index'
+
+  get 'states/new'
+
+  get 'states/show'
+
+get 'signup', to: 'users#new', as: 'signup'
+get 'login', to: 'sessions#index', as: 'login'
+get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  get 'sessions/index'
+
+  get 'users/index'
+
   get 'home/index'
   resources :posts
   resources :categories
+  resources :chemicals
+  resources :manufactures
+  resources :users
+  resources :sessions
+  resources :states
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'sessions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -58,5 +76,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 end

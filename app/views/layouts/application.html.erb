@@ -2,14 +2,80 @@
 <html>
 <head>
   <title>Myblog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></head>
 <body>
-<% flash.each do |key,value| %>
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if logged_in? %>
+        <li><%= link_to "chemicals",chemicals_path %></li>
+        <li><%= link_to "manufacturers",manufactures_path %></li>
+<li><%= link_to "categories",categories_path %></li>
+<li><%= link_to "states",states_path %></li>
+<% end %>
+      </ul>
+      <div style="margin-top: 10px"">
+      <%= form_tag(chemicals_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search chemicals" %>
+    <%= submit_tag "Search", :name => nil %>
+    </div>
+<% end %>
+      <ul class="nav navbar-nav navbar-right" style="padding-bottom: 5px">
+
+      <% if logged_in? %>
+      <li><%= link_to 'logout', logout_path , :method => :destroy %></li>
+      <% else %>
+      <li><%= link_to "login",sessions_path %></li>
+      <% end %>
+<li><%= link_to "Register",new_user_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <% flash.each do |key,value| %>
 <p><%= value %></p>
 <% end %>
-<%= yield %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
 </body>
 </html>

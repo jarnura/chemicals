@@ -1,0 +1,35 @@
+<h1>chemicals</h1>
+<table class="table table-bordered table-hover">
+<tr>
+    <td><p>ID</p></td>
+	<td><p>Name</h3></p>
+	<td><p>chemical name</p></td>
+	<td><p>cas</p></td>
+	<td><p>category name</p></td>
+	<td><p>state</p></td>
+	<td><p>description</p></td>
+	<td><p>melting_point</p></td>
+	<td><p>boiling_point</p></td>
+	<tr>
+  <% @chemicals.each do |post| %>
+  <tr>
+    <td><p><%= post.id %></p></td>
+	<td><h3><%= link_to post.name,post %></h3></td>
+	<td><p><%= post.chemical_name %></p></td>
+	<td><p><%= post.cas %></p></td>
+	<td><p><%= post.category.name %></p></td>
+	<td><p><%= post.state.name %></p></td>
+	<td><p><%= post.description %></p></td>
+	<td><p><%= post.melting_point %></p></td>
+	<td><p><%= post.melting_point %></p></td>
+	<!--<td><%= link_to 'Destroy', post, :method => :delete %></td>-->
+	<tr>
+<% end %>
+</table>
+<% if logged_in? %>
+<%= link_to "Add Chemicals",new_chemical_path %>
+<% end %>
+<% if @chemicals.blank? %>
+  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% end %>
+

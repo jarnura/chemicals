@@ -28,6 +28,7 @@ class CategoriesController < ApplicationController
 		@category = Category.find(params[:id])
 		@title = @category.name
 		@posts = @category.posts
+		@chemicals = @category.chemicals
 	end
 	
 	def destroy
@@ -37,4 +38,6 @@ class CategoriesController < ApplicationController
 	def category_params
 		params.require(:category).permit(:name)
 	end
+
+
 end

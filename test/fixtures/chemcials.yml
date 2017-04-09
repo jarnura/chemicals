@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  chemical_name: MyString
+  cas: 1
+  description: MyString
+  melting_point: MyString
+  boiling_point: MyString
+  molecular_weight: MyString
+  hazardous_level: MyString
+  safety_description: MyString
+  transport_info: MyString
+
+two:
+  name: MyString
+  chemical_name: MyString
+  cas: 1
+  description: MyString
+  melting_point: MyString
+  boiling_point: MyString
+  molecular_weight: MyString
+  hazardous_level: MyString
+  safety_description: MyString
+  transport_info: MyString

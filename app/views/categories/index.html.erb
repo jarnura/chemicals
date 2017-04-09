@@ -1,5 +1,16 @@
 <h1>Category</h1>
+<table class="table table-bordered table-hover">
+<tr>
+    <td><p>ID</p></td>
+	<td><p>Name</h3></p>
+	<tr>
 <% @category.each do |cat| %>
-	<h3><%= link_to cat.id,cat %></h3>
-	<p><%= cat.name %></p>
+<tr>
+	<td><h3><%=  cat.id %></h3></td>
+	<td><p><%= link_to cat.name,cat %></p></td>
+<tr>
+<% end %>
+</table>
+<% if logged_in? %>
+<%= link_to "Add Category",new_category_path %>
 <% end %>

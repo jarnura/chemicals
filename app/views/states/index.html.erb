@@ -1,0 +1,15 @@
+<h1>States</h1>
+<table class="table table-bordered table-hover">
+<tr>
+    <td><p>ID</p></td>
+	<td><p>Name</h3></p>
+	<tr>
+<% @state.each do |cat| %>
+<tr>
+	<td><h3><%=  cat.id %></h3></td>
+	<td><p><%= link_to cat.name,cat %></p></td>
+<tr>
+<% end %>
+</table>
+
+<div id="map" style="width:50%;height:500px"></div>

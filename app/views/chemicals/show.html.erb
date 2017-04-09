@@ -1,0 +1,21 @@
+<h1><%= @chemical.name %></h1>
+<table class="table table-bordered table-hover">
+<tr><td>Chemical Name</td>
+<td>
+<small><%= @chemical.chemical_name %></small></td></tr>
+<tr><td>CAS</td> <td><p><%= @chemical.cas %></p></td></tr>
+<tr><td>Description</td><td><p><%= @chemical.description %></p></td></tr>
+<tr><td><h3>Properties</h3></td></tr>
+<tr><td>Melting_point</td> <td><p><%= @chemical.melting_point %></p></td></tr>
+<tr><td>Boiling_point</td> <td><p><%= @chemical.boiling_point %></p></td></tr>
+<tr><td>Molecular_weight</td> <td><p><%= @chemical.molecular_weight %></p></td></tr>
+<tr><td>Hazardous_level</td><td> <p><%= @chemical.hazardous_level %></p></td></tr>
+<tr><td>safety_description</td><td> <p><%= @chemical.safety_description %></p></td></tr>
+<tr><td>Transport Information</td><td> <p><%= @chemical.transport_info %></p></td></tr>
+<tr><td>Category</td><td><p><%= link_to @chemical.category.name,category_path(:id => @chemical.category.id) %></p></td></tr>
+<tr><td>Manufacture</td><td><p><%= link_to @chemical.manufacture.name,manufacture_path(:id => @chemical.manufacture.id) %></p></td></tr>
+<tr><td>place</td><td><p><%= link_to @chemical.state.name,state_path(:id => @chemical.state.id) %></p></td></tr>
+<tr><td>production</td><td><p><%= link_to @chemical.production %></p></td></tr>
+
+</table>
+<%= link_to "Back",chemicals_path %>
