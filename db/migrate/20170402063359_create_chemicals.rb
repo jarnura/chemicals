@@ -13,6 +13,7 @@ class CreateChemicals < ActiveRecord::Migration
       t.string :transport_info
       t.integer :category_id
       t.integer :manufacture_id
+      t.integer :state_id
       t.string :place
       t.string :production
       t.timestamps null: false
