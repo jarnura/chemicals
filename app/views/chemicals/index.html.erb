@@ -1,31 +1,5 @@
 <h1>chemicals</h1>
-<table class="table table-bordered table-hover">
-<tr>
-    <td><p>ID</p></td>
-	<td><p>Name</h3></p>
-	<td><p>chemical name</p></td>
-	<td><p>cas</p></td>
-	<td><p>category name</p></td>
-	<td><p>state</p></td>
-	<td><p>description</p></td>
-	<td><p>melting_point</p></td>
-	<td><p>boiling_point</p></td>
-	<tr>
-  <% @chemicals.each do |post| %>
-  <tr>
-    <td><p><%= post.id %></p></td>
-	<td><h3><%= link_to post.name,post %></h3></td>
-	<td><p><%= post.chemical_name %></p></td>
-	<td><p><%= post.cas %></p></td>
-	<td><p><%= post.category.name %></p></td>
-	<td><p><%= post.state.name %></p></td>
-	<td><p><%= post.description %></p></td>
-	<td><p><%= post.melting_point %></p></td>
-	<td><p><%= post.melting_point %></p></td>
-	<!--<td><%= link_to 'Destroy', post, :method => :delete %></td>-->
-	<tr>
-<% end %>
-</table>
+<%= content_tag :div, "", id: "myfirstchart", data: {chemicals: @chemicals} %>
 <% if logged_in? %>
 <%= link_to "Add Chemicals",new_chemical_path %>
 <% end %>
@@ -33,3 +7,55 @@
   <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
 <% end %>
 
+  <table id="chemicals" class="table table-bordered table-hover">
+ 
+<thead>
+<tr>
+    <th>ID</th>
+	<th>Name</h3></th>
+	<th>chemical name</th>
+	<th>cas</th>
+	<th>category name</th>
+	<th>state</th>
+	<th>description</th>
+	<th>melting_point</th>
+	<th>boiling_point</th>
+	</tr>
+	</thead>
+   	<tboby>
+  <% @chemicals.each do |post| %>
+  <tr>
+    <td><%= post.id %></td>
+	<td><%= link_to post.name,post %></td>
+	<td><%= post.chemical_name %></td>
+	<td><%= post.cas %></td>
+	<td><%= post.category.name %></td>
+	<td><%= post.state.name %></td>
+	<td><%= post.description %></td>
+	<td><%= post.melting_point %></td>
+	<td><%= post.boiling_point %></td>
+	<!--<th><%= link_to 'Destroy', post, :method => :delete %></th>-->
+	</tr>
+<% end %>
+</tboby>
+  </table>
+<script>
+$(function(){
+    $("#chemicals").dataTable();
+  })
+
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: $('#myfirstchart').data('chemicals'),
+  // The name of the data record attribute that contains x-values.
+  xkey: 'id',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['melting_point', 'boiling_point'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['melting_point', 'boiling_point']
+});
+</script>

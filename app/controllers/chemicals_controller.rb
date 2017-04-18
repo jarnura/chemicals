@@ -53,4 +53,21 @@ class ChemicalsController < ApplicationController
 	end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

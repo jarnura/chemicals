@@ -3,22 +3,23 @@
 <head>
   <title>Myblog</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></head>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+
+
 <body>
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
 
-
-
-
-
-
-
-
-
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <!--div class="container-fluid">
+  <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding: 15px 15px 15px 15px; border-bottom: 1px solid black;">
+    <a class="navbar-brand" href="#">Jarnura</a>
       <ul class="nav navbar-nav">
         <% if logged_in? %>
         <li><%= link_to "chemicals",chemicals_path %></li>
@@ -27,13 +28,13 @@
 <li><%= link_to "states",states_path %></li>
 <% end %>
       </ul>
-      <div style="margin-top: 10px"">
-      <%= form_tag(chemicals_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search chemicals" %>
-    <%= submit_tag "Search", :name => nil %>
-    </div>
+      <ul class="nav navbar-nav" style="padding-top: 10px; margin-left: 5px;">
+      <%= form_tag(chemicals_path, :method => "get", class: "form-inline my-2 my-lg-0") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search chemicals", class: "form-control mr-sm-2" %>
+    <%= submit_tag "Search", :name => nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+    </ul>
 <% end %>
-      <ul class="nav navbar-nav navbar-right" style="padding-bottom: 5px">
+      <ul class="nav navbar-nav navbar-right" style="margin-right: 3px;">
 
       <% if logged_in? %>
       <li><%= link_to 'logout', logout_path , :method => :destroy %></li>
@@ -42,34 +43,10 @@
       <% end %>
 <li><%= link_to "Register",new_user_path %></li>
           </ul>
-        </li>
-      </ul>
+
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  <!--/div><!-- /.container-fluid -->
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <% flash.each do |key,value| %>
 <p><%= value %></p>
 <% end %>
