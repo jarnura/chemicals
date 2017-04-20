@@ -39,6 +39,7 @@ class ChemicalsController < ApplicationController
 	end 
 	
 	def show
+		@chemicals = Chemical.all
 		@chemical = Chemical.find(params[:id])
 	end
 	

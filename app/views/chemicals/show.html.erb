@@ -1,3 +1,5 @@
+<%= content_tag :div, "", id: "chart", data: {chemical: @chemical} %>
+
 <h1><%= @chemical.name %></h1>
 <table class="table table-bordered table-hover">
 <tr><td>Chemical Name</td>
@@ -18,4 +20,29 @@
 <tr><td>production</td><td><p><%= link_to @chemical.production %></p></td></tr>
 
 </table>
+
 <%= link_to "Back",chemicals_path %>
+<script>
+// new Morris.Line({
+//   // ID of the element in which to draw the chart.
+//   element: 'chart',
+//   // Chart data records -- each entry in this array corresponds to a point on
+//   // the chart.
+//   data: $('#chart').data('chemicals'),
+//   // The name of the data record attribute that contains x-values.
+//   xkey: 'id',
+//   // A list of names of data record attributes that contain y-values.
+//   ykeys: ['melting_point', 'boiling_point', 'hazardous_level'],
+//   // Labels for the ykeys -- will be displayed when you hover over the
+//   // chart.
+//   labels: ['melting_point', 'boiling_point', 'hazardous_level'],
+//     hideHover: true
+// });
+
+new Morris.Donut({
+  element: 'chart',
+  data: [
+    {label: "", value: 1}
+  ]
+});
+</script>
