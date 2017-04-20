@@ -36,7 +36,7 @@
 <% end %>
       <ul class="nav navbar-nav navbar-right" style="margin-right: 3px;">
 
-      <% if logged_in? %>
+      <% if true %>
       <li><%= link_to 'logout', logout_path , :method => :destroy %></li>
       <% else %>
       <li><%= link_to "login",sessions_path %></li>
