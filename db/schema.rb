@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402072905) do
+ActiveRecord::Schema.define(version: 20170402071618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,11 +68,11 @@ ActiveRecord::Schema.define(version: 20170402072905) do
     t.string   "transport_info"
     t.integer  "category_id"
     t.integer  "manufacture_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "state_id"
     t.string   "place"
     t.string   "production"
-    t.string   "state_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "manufactures", force: :cascade do |t|
@@ -84,11 +84,13 @@ ActiveRecord::Schema.define(version: 20170402072905) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.text     "body"
+    t.text     "brief_description"
     t.integer  "category_id"
-    t.integer  "author_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "properties"
+    t.string   "chemical_name"
+    t.integer  "manufacture_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "registerchemicals", force: :cascade do |t|
