@@ -13,4 +13,6 @@
 	</tr>
 <% end %>
 </table>
+ <% if logged_in? %>
 <%= link_to "Add Manufacturers",new_manufacture_path %>
+<% end %>

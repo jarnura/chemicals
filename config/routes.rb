@@ -14,6 +14,8 @@ get 'logout', to: 'sessions#destroy', as: 'logout'
 
   get 'users/index'
 
+  get 'users/list'
+
   get 'home/index'
   resources :posts
   resources :categories

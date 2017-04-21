@@ -11,4 +11,6 @@
 <tr>
 <% end %>
 </table>
+ <% if logged_in? %>
 <%= link_to "Add States",new_state_path %>
+<% end %>

@@ -20,12 +20,14 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding: 15px 15px 15px 15px; border-bottom: 1px solid black;">
     <a class="navbar-brand" href="#">Jarnura</a>
+    <% if logged_in? %>
       <ul class="nav navbar-nav">
         <li><%= link_to "chemicals",chemicals_path %></li>
         <li><%= link_to "manufacturers",manufactures_path %></li>
 <li><%= link_to "categories",categories_path %></li>
 <li><%= link_to "states",states_path %></li>
       </ul>
+      <% end %>
       <ul class="nav navbar-nav" style="padding-top: 10px; margin-left: 5px;">
       <%= form_tag(chemicals_path, :method => "get", class: "form-inline my-2 my-lg-0") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search chemicals", class: "form-control mr-sm-2" %>
@@ -33,11 +35,11 @@
     </ul>
 <% end %>
       <ul class="nav navbar-nav navbar-right" style="margin-right: 3px;">
-
+ <% if logged_in? %>
       <li><%= link_to 'logout', logout_path , :method => :destroy %></li>
-
+<% else %>
       <li><%= link_to "login",sessions_path %></li>
-
+<% end %>
 <li><%= link_to "Register",new_user_path %></li>
           </ul>
 
