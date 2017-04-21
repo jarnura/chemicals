@@ -259,7 +259,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  sqlite3
+  sqlite3 (= 1.3.13)
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
