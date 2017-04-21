@@ -26,7 +26,6 @@ class StatesController < ApplicationController
 	
 	def show
 		@state = State.find(params[:id])
-		@title = @state.name
 		@chemicals = @state.chemicals
 	end
 	
